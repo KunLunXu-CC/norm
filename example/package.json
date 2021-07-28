@@ -1,0 +1,15 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cz": "qy-cz",
+    "commitlint": "qy-commitlint",
+    "link": "npm link ../",
+    "prepare": "husky install qy-norm/.husky"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
