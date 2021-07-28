@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "cz": "qy-cz",
-    "commitlint": "qy-commitlint",
     "link": "npm link ../",
     "prepare": "husky install qy-norm/.husky"
   },
