@@ -8,7 +8,7 @@
 手动初始化
 
 ```shell
-npm set-script prepare "husky install qy-norm/.husky"
+npm set-script prepare "husky install ./node_modules/qy-norm/.husky"
 npm set-script cz "qy-cz"
 npm run prepare
 ```
