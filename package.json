@@ -27,7 +27,7 @@
     "url": "https://github.com/qianyin925/qy-norm/issues"
   },
   "homepage": "https://github.com/qianyin925/qy-norm#readme",
-  "devDependencies": {
+  "dependencies": {
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-angular": "^12.1.4",
     "commander": "^8.1.0",
