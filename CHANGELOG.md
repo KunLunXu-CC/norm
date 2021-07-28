@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.2](https://github.com/qianyin925/qy-norm/compare/v1.0.1...v1.0.2) (2021-07-28)
+
+
+### Features
+
+* 🎸 调整依赖 ([f28e2d5](https://github.com/qianyin925/qy-norm/commit/f28e2d56c99bec4a53d5d0057ec085f1dc3848ad))
+
 ### 1.0.1 (2021-07-28)
 
 
