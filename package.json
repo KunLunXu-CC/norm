@@ -5,12 +5,14 @@
   "private": false,
   "main": "index.js",
   "scripts": {
-    "commit": "git-cz",
+    "commit": "node ./bin/commit.js",
     "release": "standard-version --release-as",
     "release:100": "npm run release -- major",
     "release:010": "npm run release -- minor",
-    "release:001": "npm run release -- patch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "release:001": "npm run release -- patch"
+  },
+  "bin": {
+    "commit": "./bin/commit.js"
   },
   "repository": {
     "type": "git",
@@ -26,20 +28,14 @@
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-angular": "^12.1.4",
-    "commitizen": "^4.2.4",
-    "cz-conventional-changelog": "^3.2.0",
     "git-cz": "^4.7.6",
     "husky": "^7.0.1",
-    "standard-version": "^9.3.1"
+    "standard-version": "^9.3.1",
+    "zx": "^2.0.0"
   },
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
-  "config": {
-    "commitizen": {
-      "path": "git-cz"
     }
   }
 }
