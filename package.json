@@ -1,19 +1,17 @@
 {
   "name": "qy-norm",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "个人项目规范",
   "main": "index.js",
   "scripts": {
     "cz": "node ./bin/cz.mjs",
-    "release": "standard-version --release-as",
-    "release:100": "npm run release -- major",
-    "release:010": "npm run release -- minor",
-    "release:001": "npm run release -- patch",
+    "release": "node ./bin/release.mjs",
     "prepare": "husky install"
   },
   "bin": {
     "qy-cz": "./bin/cz.mjs",
-    "qy-norm": "./bin/norm.mjs"
+    "qy-norm": "./bin/norm.mjs",
+    "release": "./bin/release.mjs"
   },
   "repository": {
     "type": "git",
