@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 import { $, chalk } from 'zx';
 
+$.quote = v => v;
+
 // 获取 standard-version 参数
 const option = {
   '100': 'major',
