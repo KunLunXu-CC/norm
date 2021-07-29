@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.8](https://github.com/qianyin925/qy-norm/compare/v1.0.7...v1.0.8) (2021-07-29)
+
+
+### Bug Fixes
+
+* 🐛 qy-commitlint 引入错误 ([d626bb0](https://github.com/qianyin925/qy-norm/commit/d626bb0157cfa2337d291305e8103a75e6703ea1))
+
 ### [1.0.7](https://github.com/qianyin925/qy-norm/compare/v1.0.6...v1.0.7) (2021-07-29)
 
 
