@@ -1,15 +1,43 @@
 #!/usr/bin/env node
+import inquirer from 'inquirer';
+import shell from 'shelljs'
 import { $ } from 'zx';
 
-const option = process.argv[2];
+// 配置列表
+const setting = [
+  {
+    name: 'cz',
+    exec: async () => {
+      $`npm set-script cz "qy-cz"`
+    }, 
+  },
+  {
+    name: 'release',
+    exec: async () => {
+      $`npm set-script release "qy-release"`
+    }, 
+  },
+  {
+    name: 'commitlint',
+    exec: async () => {
+      $`
+        npm set-script prepare "husky install"
+        npm run prepare
+        npx husky add .husky/commit-msg "npx qy-commitlint"
+      `;
+    }
+  },
+];
 
-switch (option) {
-  case 'init' :
-    // Edit package.json > prepare script and run it once
-    $`npm set-script prepare "husky install qy-norm/.husky"`
-    $`npm run prepare`
-  
-    break;
-  default:
-    console.log(`参数 ${option} 未定义!`);
-}
+// 交互式命令获取参数
+const { execs } = await inquirer.prompt([
+  {
+    name: 'execs',
+    type: 'checkbox',
+    message: 'select the features you want to add!',
+    choices: setting.map(({ name, exec: value }) => ({ name, value })),
+  }
+]);
+
+// 遍历执行
+execs.map(exec => exec());

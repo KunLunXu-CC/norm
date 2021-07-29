@@ -2,23 +2,6 @@
 
 个人项目规范
 
+## 初始化
 
-## git-cz
-
-手动初始化
-
-```shell
-npm set-script prepare "husky install ./node_modules/qy-norm/.husky"
-npm set-script cz "qy-cz"
-npm run prepare
-```
-
-```json
-"scripts": {
-  "cz": "qy-cz",
-  "release": "qy-release",  // npm run release 100 | 010 | 001
-  "prepare": "husky install qy-norm/.husky"
-},
-```
-
-脚本初始化
+1. 执行 `npx norm` 并选择要配置内容
