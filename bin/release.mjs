@@ -21,4 +21,4 @@ $`
   standard-version --release-as ${option}
   git push
   npm publish --access public
-`;
+`.exitCode;

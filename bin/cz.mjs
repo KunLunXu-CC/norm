@@ -28,6 +28,4 @@ const { option, message } = await inquirer.prompt([
 ]);
 
 // git commit 
-if (await $`git commit -m "${option.type}: ${option.emoji} ${message}"`.exitCode !== 0) {
-  process.exit(1);
-}
+$`git commit -m "${option.type}: ${option.emoji} ${message}"`.exitCode;
