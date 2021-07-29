@@ -32,7 +32,6 @@
     "commander": "^8.1.0",
     "husky": "^7.0.1",
     "inquirer": "^8.1.2",
-    "shelljs": "^0.8.4",
     "standard-version": "^9.3.1",
     "zx": "^2.0.0"
   }

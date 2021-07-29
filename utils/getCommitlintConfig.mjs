@@ -12,7 +12,7 @@ let configPath = path.resolve(process.env.PWD, './commitlint.config.js');
 
 // 2. 如果项目未定义, 则取当前包内的配置
 if (!fs.existsSync(configPath)) {
-  configPath = new URL('../commitlint.config.js', import.meta.url);
+  configPath = new URL('../commitlint.config.js', import.meta.url).pathname;
 }
 
 // 3. 读取配置文件数据

@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 import inquirer from 'inquirer';
-import shell from 'shelljs';
 import config from '../utils/getCommitlintConfig.mjs';
+import { $ } from 'zx';
 
 const TYPE_PLACEHOLDER_LENGTH = 10;
+
+$.quote = v => v;
 
 // 交互式命令获取参数
 const { option, message } = await inquirer.prompt([
@@ -25,5 +27,7 @@ const { option, message } = await inquirer.prompt([
   }
 ]);
 
-// 后面换成 zx
-shell.exec(`git commit -m "${option.type}: ${option.emoji} ${message}"`);
+// git commit 
+if (await $`git commit -m "${option.type}: ${option.emoji} ${message}"`.exitCode !== 0) {
+  process.exit(1);
+}
