@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.9](https://github.com/qianyin925/qy-norm/compare/v1.0.8...v1.0.9) (2021-07-29)
+
+
+### Bug Fixes
+
+* 🐛 npm run cz has fix ([acab3dc](https://github.com/qianyin925/qy-norm/commit/acab3dc801913366143e1f21f1cd61626ed3487a))
+
 ### [1.0.8](https://github.com/qianyin925/qy-norm/compare/v1.0.7...v1.0.8) (2021-07-29)
 
 
