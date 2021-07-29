@@ -2,8 +2,6 @@
 import inquirer from 'inquirer';
 import shell from 'shelljs';
 
-console.log('%c [ $ ]', 'font-size:13px; background:pink; color:#bf2c9f;', $);
-
 import { types } from '../commitlint.config.js'
 
 const TYPE_PLACEHOLDER_LENGTH = 10;
