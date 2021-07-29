@@ -4,7 +4,7 @@
   "description": "个人项目规范",
   "main": "index.js",
   "scripts": {
-    "cz": "node ./bin/cz.mjs",
+    "cz": "git add . && node ./bin/cz.mjs",
     "release": "node ./bin/release.mjs",
     "prepare": "husky install"
   },
