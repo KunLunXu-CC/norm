@@ -2,7 +2,6 @@
   "name": "qy-norm",
   "version": "1.0.4",
   "description": "个人项目规范",
-  "private": false,
   "main": "index.js",
   "scripts": {
     "cz": "node ./bin/cz.mjs",
@@ -31,8 +30,9 @@
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-angular": "^12.1.4",
     "commander": "^8.1.0",
-    "git-cz": "^4.7.6",
     "husky": "^7.0.1",
+    "inquirer": "^8.1.2",
+    "shelljs": "^0.8.4",
     "standard-version": "^9.3.1",
     "zx": "^2.0.0"
   }
