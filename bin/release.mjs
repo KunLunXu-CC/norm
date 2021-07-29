@@ -12,4 +12,11 @@ if (!option) {
   console.log(chalk.red('参数错误, 可选参数: 100 | 010 | 001'));
   process.exit(0);
 }
-$`standard-version --release-as ${option}`;
+
+$`
+  git pull
+  git fetch
+  standard-version --release-as ${option}
+  git push
+  npm publish --access public
+`;

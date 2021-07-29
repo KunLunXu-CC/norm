@@ -9,7 +9,7 @@ const setting = [
   {
     name: 'cz',
     exec: async () => {
-      $`npm set-script cz "qy-cz"`
+      $`npm set-script cz "git add . && qy-cz"`
     }, 
   },
   {
