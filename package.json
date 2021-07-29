@@ -11,7 +11,7 @@
   "bin": {
     "qy-cz": "./bin/cz.mjs",
     "qy-norm": "./bin/norm.mjs",
-    "release": "./bin/release.mjs"
+    "qy-release": "./bin/release.mjs"
   },
   "repository": {
     "type": "git",

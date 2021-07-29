@@ -16,6 +16,7 @@ npm run prepare
 ```json
 "scripts": {
   "cz": "qy-cz",
+  "release": "qy-release",  // npm run release 100 | 010 | 001
   "prepare": "husky install qy-norm/.husky"
 },
 ```
