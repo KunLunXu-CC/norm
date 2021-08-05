@@ -14,18 +14,18 @@ const { option, message } = await inquirer.prompt([
     name: 'option',
     message: 'Select the type of change that you\'re committing',
     // filter: v => v.toLowerCase(),
-    choices: config.types.map(({ emoji, value: type, desc }) => ( {
+    choices: config.types.map(({ emoji, value: type, desc }) => ({
       value: { emoji, type, desc },
       name: `${emoji} ${type}${''.padStart(TYPE_PLACEHOLDER_LENGTH - type.length, ' ')}${desc}`,
-    }))
+    })),
   },
   {
     type: 'input',
     name: 'message',
     message: 'Write a short, imperative mood description of the change',
     validate: v => (!!v || 'Write a short'),
-  }
+  },
 ]);
 
-// git commit 
+// git commit
 $`git commit -m "${option.type}: ${option.emoji} ${message}"`.exitCode;

@@ -9,14 +9,14 @@ const setting = [
   {
     name: 'cz',
     exec: async () => {
-      $`npm set-script cz "git add . && qy-cz"`
-    }, 
+      $`npm set-script cz "git add . && qy-cz"`;
+    },
   },
   {
     name: 'release',
     exec: async () => {
-      $`npm set-script release "qy-release"`
-    }, 
+      $`npm set-script release "qy-release"`;
+    },
   },
   {
     name: 'commitlint',
@@ -26,7 +26,7 @@ const setting = [
         npm run prepare
         npx husky add .husky/commit-msg "npx qy-commitlint"
       `;
-    }
+    },
   },
 ];
 
@@ -37,7 +37,7 @@ const { execs } = await inquirer.prompt([
     type: 'checkbox',
     message: 'select the features you want to add!',
     choices: setting.map(({ name, exec: value }) => ({ name, value })),
-  }
+  },
 ]);
 
 // 遍历执行

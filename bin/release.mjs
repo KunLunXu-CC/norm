@@ -8,7 +8,7 @@ const option = {
   '100': 'major',
   '010': 'minor',
   '001': 'patch',
-}[process.argv[2]]
+}[process.argv[2]];
 
 if (!option) {
   console.log(chalk.red('参数错误, 可选参数: 100 | 010 | 001'));

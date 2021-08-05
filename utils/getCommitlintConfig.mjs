@@ -1,6 +1,5 @@
 /**
  * 读取 commitlint.config 配置文件
- * 
  * 1. 默认会先读取, 使用该依赖的 npm 项目下的配置文件
  * 2. 如果使用该依赖的 npm 项目下的未配置 commitlint.config 则读取当前依赖包内的配置
  */
@@ -19,4 +18,4 @@ if (!fs.existsSync(configPath)) {
 const config = await import(configPath);
 
 // 4. 导出
-export default { configPath, ...config?.default ?? {} }
+export default { configPath, ... config?.default ?? {} };
