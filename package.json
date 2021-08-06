@@ -13,6 +13,7 @@
     "qy-cz": "./bin/cz.mjs",
     "qy-norm": "./bin/norm.mjs",
     "qy-release": "./bin/release.mjs",
+    "qy-codelint": "./bin/codelint.mjs",
     "qy-commitlint": "./bin/commitlint.mjs"
   },
   "repository": {

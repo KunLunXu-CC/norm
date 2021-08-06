@@ -3,3 +3,6 @@
 
 # 校验 commit 规范, `dirname $0` 获取当前脚本所在文件夹位置
 node `dirname $0`/../bin/commitlint.mjs 
+
+# 校验代码: eslint stylelint 
+node `dirname $0`/../bin/codelint.mjs 

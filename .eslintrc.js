@@ -21,6 +21,9 @@ module.exports = {
     'eslint:recommended',
     'plugin:react/recommended',
   ],
+  settings: {
+    react: { version: 'detect' },
+  },
   rules: {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'off',

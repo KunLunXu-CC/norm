@@ -10,7 +10,7 @@ const types = [
     emoji: '🎸',
     value: 'feat',
   },
-	{
+  {
     desc: 'A bug fix',
     emoji: '🐛',
     value: 'fix',
@@ -25,17 +25,17 @@ const types = [
     emoji: '🤖',
     value: 'chore',
   },
-	{
+  {
     desc: 'CI related changes',
     emoji: '🎡',
     value: 'ci',
   },
-	{
+  {
     desc: 'Documentation only changes',
     emoji: '📝',
     value: 'docs',
   },
-	{
+  {
     desc: 'Create a release commit',
     emoji: '🏹',
     value: 'release',
@@ -45,17 +45,17 @@ const types = [
     emoji: '💄',
     value: 'style',
   },
-	{
+  {
     desc: 'Adding missing tests',
     emoji: '💍',
     value: 'test',
-  }
+  },
 ];
 
 module.exports = {
   types,
   extends: ['@commitlint/config-angular'],
   rules: {
-		'type-enum': [2, 'always', types.map(v => v.value)],
-	},
+    'type-enum': [2, 'always', types.map(v => v.value)],
+  },
 };
