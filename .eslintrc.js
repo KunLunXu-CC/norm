@@ -26,22 +26,24 @@ module.exports = {
   },
   rules: {
     // 1. react 插件规则个性化设置: https://www.npmjs.com/package/eslint-plugin-react
-    'react/prop-types': 0,         // 防止在React组件定义中丢失props验证:  'data' is missing in props validation
-    'react/display-name': 0,          // 防止在React组件定义中丢失displayName: Component definition is missing display name
-    'react/self-closing-comp': 2, // 防止没有子组件的额外结束标签
-    'react/jsx-closing-bracket-location': [2, { // 设置结束符 > 位置
-      nonEmpty: 'after-props',    // 非空则结束符跟在 props 后面
-      selfClosing: 'line-aligned', // 自动关闭, 则一行显示
+    'react/prop-types': 0,                       // 不强制要求设置 props 校验
+    'react/display-name': 0,                     // 不强制设置 displayName(为组件命名)
+    'react/self-closing-comp': 2,                // 不允许额外的结束标签, 如果没有子元素应该使用自闭合标签
+    'react/jsx-closing-bracket-location': [2, {  // 结束括号(>)必须与包含开始标记的行对齐
+      nonEmpty: 'after-props',                   // 非空则结束符跟在 props 后面
+      selfClosing: 'line-aligned',               // 自动关闭, 则一行显示
     }],
-    'react/jsx-first-prop-new-line': 2, // 确保第一个属性在 JSX 中的正确位置
-    'react/jsx-no-useless-fragment': 2, // 禁止不必要的片段
-    'react/jsx-curly-spacing': 2,  //
-    'react/jsx-max-props-per-line': [1, { maximum: 1 }], // 限制 JSX 中一行最多 props
-    'react/jsx-one-expression-per-line': 2, // JSX 中每行限制为一个表达式
-    'react/jsx-props-no-multi-spaces': 2, // 禁止内联 JSX 道具之间有多个空格
-    'react/jsx-space-before-closing': 2, // 在 JSX 中关闭括号之前验证间距
-    'react/jsx-tag-spacing': 2, // 验证 JSX 左括号和右括号内和周围的空格
-    'react/jsx-wrap-multilines': [2, {  // 防止多行 JSX 周围缺少括号
+    'react/jsx-first-prop-new-line': 2,                  // 如果 JSX 标签占用多行并且有多个属性，则第一个属性应始终放在新行
+    'react/jsx-max-props-per-line': [1, { maximum: 1 }], // 限制一行最多只能有一个 props
+
+    'react/jsx-no-useless-fragment': 2,          // 禁止不必要的空标签 <></> || <React.Fragment>
+    'react/jsx-indent': [2, 2],                  // JSX 缩进
+    'react/jsx-equals-spacing': [2, 'never'],    // 在 JSX 属性 = 周围不能有空格
+    'react/jsx-curly-spacing': 2,                // 属性值 {} 和值不允许有空格 xxx={name}
+    'react/jsx-one-expression-per-line': 2,      // JSX 中每行限制为一个表达式
+    'react/jsx-props-no-multi-spaces': 2,        // 多个 props 之间不允许有多余的空格、行
+    'react/jsx-tag-spacing': 2,                  // 验证 JSX < 和 > 周围的空格
+    'react/jsx-wrap-multilines': [2, {           // 多行 jsx 需要使用 () 包裹
       declaration: 'parens-new-line',
       assignment: 'parens-new-line',
       return: 'parens-new-line',
