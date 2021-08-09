@@ -16,32 +16,58 @@ module.exports = {
     _DEV_: true,
     lodash: true,
   },
-  plugins: ['react', 'import', 'jsdoc', 'react-hooks'],
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
   ],
+  plugins: ['react', 'import', 'jsdoc', 'react-hooks'],
   settings: {
     react: { version: 'detect' },
   },
   rules: {
+    // 1. react 插件规则个性化设置: https://www.npmjs.com/package/eslint-plugin-react
+    'react/prop-types': 0,         // 防止在React组件定义中丢失props验证:  'data' is missing in props validation
+    'react/display-name': 0,          // 防止在React组件定义中丢失displayName: Component definition is missing display name
+    'react/self-closing-comp': 2, // 防止没有子组件的额外结束标签
+    'react/jsx-closing-bracket-location': [2, { // 设置结束符 > 位置
+      nonEmpty: 'after-props',    // 非空则结束符跟在 props 后面
+      selfClosing: 'line-aligned', // 自动关闭, 则一行显示
+    }],
+    'react/jsx-first-prop-new-line': 2, // 确保第一个属性在 JSX 中的正确位置
+    'react/jsx-no-useless-fragment': 2, // 禁止不必要的片段
+    'react/jsx-curly-spacing': 2,  //
+    'react/jsx-max-props-per-line': [1, { maximum: 1 }], // 限制 JSX 中一行最多 props
+    'react/jsx-one-expression-per-line': 2, // JSX 中每行限制为一个表达式
+    'react/jsx-props-no-multi-spaces': 2, // 禁止内联 JSX 道具之间有多个空格
+    'react/jsx-space-before-closing': 2, // 在 JSX 中关闭括号之前验证间距
+    'react/jsx-tag-spacing': 2, // 验证 JSX 左括号和右括号内和周围的空格
+    'react/jsx-wrap-multilines': [2, {  // 防止多行 JSX 周围缺少括号
+      declaration: 'parens-new-line',
+      assignment: 'parens-new-line',
+      return: 'parens-new-line',
+      arrow: 'parens-new-line',
+      condition: 'parens-new-line',
+      logical: 'parens-new-line',
+      prop: 'parens-new-line',
+    }],
+
+    // 2. react-hooks 插件规则个性化设置
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'off',
-    'react/prop-types': 0,         // 防止在React组件定义中丢失props验证:  'data' is missing in props validation
-    'react/display-name': 0,       // 防止在React组件定义中丢失displayName: Component definition is missing display name
 
-    // 个性化定制
+    // 3. 常规个性化定制
     'indent': [2, 2],                                                 // 缩进: 2个空格
-    'max-len': [2, { 'code': 100 }],                                  // 单行不超过 100
+    'max-len': [2, { code: 100 }],                                    // 单行不超过 100
     'keyword-spacing': [2],                                           // 强制关键字周围空格的一致性
     'rest-spread-spacing': [2, 'always'],                             // 扩展运算符及其表达式之间要求有空格
-    'comma-spacing': [2, { 'before': false, 'after': true }],         // 强制在逗号周围使用空格
-    'switch-colon-spacing': [2, { 'after': true, 'before': false }],  // 强制在 switch 的冒号左右有空格
+    'comma-spacing': [2, { before: false, after: true }],             // 强制在逗号周围使用空格
+    'switch-colon-spacing': [2, { after: true, before: false }],      // 强制在 switch 的冒号左右有空格
 
     'semi': [2, 'always'],                                            // 要求使用分号
     'semi-style': [2, 'last'],                                        // 强制分号处于句子末尾
     'no-extra-semi': 2,                                               // 禁止不必要的分号(使用多个分号)
 
+    'quote-props': [2, 'consistent-as-needed'],                       // 如果有属性名称要求使用引号，则所有的属性名称都要使用引号；否则，禁止所有的属性名称使用引号
     'no-extra-boolean-cast': 0,                                       // 禁止不必要的布尔转换
     'no-var': 2,                                                      // 禁止使用 var
     'space-infix-ops': 2,                                             // 要求中缀操作符周围有空格
@@ -59,7 +85,7 @@ module.exports = {
 
     'no-array-constructor': 2,                                        // 禁止使用 Array 构造函数
     'array-callback-return': 2,                                       // 强制数组方法的回调函数中有 return 语句
-    'prefer-destructuring': [2, { 'object': true, 'array': true }],   // 优先使用数组和对象解构
+    'prefer-destructuring': [2, { object: true, array: true }],       // 优先使用数组和对象解构
     'quotes': [2, 'single'],                                          // 字符串使用要求使用单引号
     'prefer-template': 2,                                             // 建议使用模板字面量而非字符串连接
     'template-curly-spacing': [2, 'never'],                           // 禁止模板字符串中的嵌入表达式周围空格的使用
@@ -72,10 +98,10 @@ module.exports = {
 
     'space-before-blocks': [2, 'always'],                             // 要求语句块之前的空格
     'space-before-function-paren': [2, 'always'],                     // 要求函数圆括号之前有一个空格
-    'no-param-reassign': [2, { 'props': true }],                      // 禁止对函数参数再赋值、禁止对参数对象修改属性
+    'no-param-reassign': [2, { props: true }],                        // 禁止对函数参数再赋值、禁止对参数对象修改属性
     'prefer-spread': 2,                                               // 建议使用扩展语法而非.apply()
     'prefer-arrow-callback': 2,                                       // 要求使用箭头函数作为回调
-    'arrow-spacing': [2, { 'before': true, 'after': true }],          // 要求箭头函数的箭头之前或之后有空格
+    'arrow-spacing': [2, { before: true, after: true }],              // 要求箭头函数的箭头之前或之后有空格
     'arrow-parens': [2, 'as-needed'],                                 // 箭头函数中: 在可以省略括号的地方强制不使用括号
     'arrow-body-style': [2, 'as-needed'],                             // 箭头函数中: 当大括号是可以省略的, 强制不使用它们
     'no-confusing-arrow': 2,                                          // 禁止在可能与比较操作符相混淆的地方使用箭头函数
@@ -90,7 +116,7 @@ module.exports = {
 
     'spaced-comment': [2, 'always'],                                  // 注释前加一个空格
     'no-whitespace-before-property': 2,                               // 禁止属性前有空白
-    'newline-per-chained-call': [2, { 'ignoreChainWithDepth': 2 }],   // 要求方法链中每个调用都有一个换行符
+    'newline-per-chained-call': [2, { ignoreChainWithDepth: 2 }],     // 要求方法链中每个调用都有一个换行符
     'comma-style': [2, 'last'],                                       // 不要前置逗号
     'comma-dangle': [2, 'always-multiline'],                          // 当最后一个元素或属性与闭括号 ] 或 } 在 不同的行时, 要求使用拖尾逗号；当在 同一行时, 禁止使用拖尾逗号。
     'no-new-wrappers': 2,                                             // 禁止对 String, Number 和 Boolean 使用 new 操作符

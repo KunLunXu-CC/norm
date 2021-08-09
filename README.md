@@ -3,7 +3,7 @@
 个人项目规范
 
 校验 commit-msg 前也会先校验 eslint、stylelint
-cz 也会事先校验  code
+cz 也会事先校验 code
 
 ## 初始化
 
@@ -11,6 +11,7 @@ cz 也会事先校验  code
 
 ## TODO
 
-[] eslint 所有规则校验、配置过一遍
+[] eslint 所有规则校验、配置过一遍、同时需要验证 vscode 自动修复是否可用
+[] eslint jsx 属性格式、引入配置
 [] prettier
 [] 日志颜色问题
