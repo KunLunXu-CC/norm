@@ -26,9 +26,6 @@ const { releaseParams, publish } = await inquirer.prompt([
 $`
   git fetch
   standard-version --release-as ${releaseParams}
-  git push
+  git push --follow-tags origin master
+  ${publish ? 'npm publish --access public' : ''}
 `.exitCode;
-
-
-// 3. 发布 npm 包
-publish && $`npm publish --access public`.exitCode;
