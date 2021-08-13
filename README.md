@@ -7,12 +7,6 @@ cz 也会事先校验 code
 
 release 脚本自动生成 changelog tag, 并允许自动发布
 
-release 001
-release 010
-release 100
-
-release 100 -p
-
 ## 初始化
 
 1. 执行 `npx qy-norm` 并选择要配置内容
