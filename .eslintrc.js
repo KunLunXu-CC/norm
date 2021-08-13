@@ -26,12 +26,13 @@ module.exports = {
   },
   rules: {
     // 1. react 插件规则个性化设置: https://www.npmjs.com/package/eslint-plugin-react
-    'react/prop-types': 0,                       // 不强制要求设置 props 校验
-    'react/display-name': 0,                     // 不强制设置 displayName(为组件命名)
-    'react/self-closing-comp': 2,                // 不允许额外的结束标签, 如果没有子元素应该使用自闭合标签
-    'react/jsx-closing-bracket-location': [2, {  // 结束括号(>)必须与包含开始标记的行对齐
-      nonEmpty: 'after-props',                   // 非空则结束符跟在 props 后面
-      selfClosing: 'line-aligned',               // 自动关闭, 则一行显示
+    'react/default-props-match-prop-types': 2,      // 对于必须 props 无需设置默认值
+    'react/prop-types': 0,                          // 不强制要求设置 props 校验
+    'react/display-name': 0,                        // 不强制设置 displayName(为组件命名)
+    'react/self-closing-comp': 2,                   // 不允许额外的结束标签, 如果没有子元素应该使用自闭合标签
+    'react/jsx-closing-bracket-location': [2, {     // 结束括号(>)必须与包含开始标记的行对齐
+      nonEmpty: 'after-props',                      // 非空则结束符跟在 props 后面
+      selfClosing: 'line-aligned',                  // 自动关闭, 则一行显示
     }],
     'react/jsx-first-prop-new-line': 2,                  // 如果 JSX 标签占用多行并且有多个属性，则第一个属性应始终放在新行
     'react/jsx-max-props-per-line': [1, { maximum: 1 }], // 限制一行最多只能有一个 props
