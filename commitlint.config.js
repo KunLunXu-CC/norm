@@ -56,6 +56,6 @@ module.exports = {
   types,
   extends: ['@commitlint/config-angular'],
   rules: {
-    'type-enum': [2, 'always', types.map(v => v.value)],
+    'type-enum': [2, 'always', types.map((v) => v.value)],
   },
 };

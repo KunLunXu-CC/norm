@@ -2,7 +2,7 @@
 import inquirer from 'inquirer';
 import { $ } from 'zx';
 
-$.quote = v => v;
+$.quote = (v) => v;
 
 // 配置列表
 const setting = [
@@ -45,4 +45,4 @@ const { execs } = await inquirer.prompt([
 ]);
 
 // 遍历执行
-execs.map(exec => exec());
+execs.map((exec) => exec());

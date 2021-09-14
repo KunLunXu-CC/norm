@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import inquirer from 'inquirer';
 import { $ } from 'zx';
-$.quote = v => v;
+$.quote = (v) => v;
 
 // 1. 交互式命令获取参数
 const { releaseParams, publish } = await inquirer.prompt([

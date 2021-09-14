@@ -8,7 +8,7 @@ const lintCodes = [
   await $`npx stylelint --aei "**/*.{css,scss,sass,less}"`.exitCode,
 ];
 
-if (lintCodes.some(exitCode => exitCode !== 0)) {
+if (lintCodes.some((exitCode) => exitCode !== 0)) {
   console.log(chalk.red('代码校验错误, 请先进行修改!'));
   process.exit(1);
 }

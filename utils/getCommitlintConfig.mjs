@@ -18,4 +18,4 @@ if (!fs.existsSync(configPath)) {
 const config = await import(configPath);
 
 // 4. 导出
-export default { configPath, ... config?.default ?? {} };
+export default { configPath, ...(config?.default ?? {}) };
