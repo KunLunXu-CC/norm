@@ -11,7 +11,9 @@ $.quote = (v) => v;
 
 // 2. 判断是否添加暂存文件
 if ((await $`git diff HEAD --staged --quiet --exit-code`.exitCode) === 0) {
-  console.log(chalk.red('尚未暂存以备提交的变更, 请使用 git add 添加暂存文件!'));
+  console.log(
+    chalk.red('尚未暂存以备提交的变更, 请使用 git add 添加暂存文件!'),
+  );
   process.exit(1);
 }
 
@@ -24,7 +26,10 @@ const { option, message } = await inquirer.prompt([
     // filter: v => v.toLowerCase(),
     choices: config.types.map(({ emoji, value: type, desc }) => ({
       value: { emoji, type, desc },
-      name: `${emoji} ${type}${''.padStart(TYPE_PLACEHOLDER_LENGTH - type.length, ' ')}${desc}`,
+      name: `${emoji} ${type}${''.padStart(
+        TYPE_PLACEHOLDER_LENGTH - type.length,
+        ' ',
+      )}${desc}`,
     })),
   },
   {
