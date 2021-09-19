@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.7](https://github.com/qianyin925/qy-norm/compare/v1.4.6...v1.4.7) (2021-09-19)
+
+
+### Features
+
+* 🎸 update stylelint ([729bf16](https://github.com/qianyin925/qy-norm/commit/729bf16af46361641fdd64586864b372f22a1af8))
+
 ### [1.4.6](https://github.com/qianyin925/qy-norm/compare/v1.4.0...v1.4.6) (2021-09-19)
 
 
