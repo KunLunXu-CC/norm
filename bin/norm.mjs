@@ -28,7 +28,7 @@ const setting = [
         npm set-script prepare "husky install"
         npm run prepare
         npx husky add .husky/commit-msg "npx qy-codelint # 代码校验(eslint、stylelint)"
-        npx husky add .husky/commit-msg "npx qy-commitlint"
+        npx husky add .husky/commit-msg "npx qy-commitlint # commit message 校验(调用commitlint)"
       `;
     },
   },
