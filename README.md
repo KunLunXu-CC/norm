@@ -9,7 +9,7 @@ release 脚本自动生成 changelog tag, 并允许自动发布
 
 ## 初始化
 
-1. 执行 `npx qy-norm` 并选择要配置内容
+1. 1 执行 `npx qy-norm` 并选择要配置内容
 
 ## TODO
 
