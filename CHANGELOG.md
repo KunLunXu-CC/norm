@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.6](https://github.com/qianyin925/qy-norm/compare/v1.4.0...v1.4.6) (2021-09-19)
+
+
+### Features
+
+* 🎸 update cz ([c242844](https://github.com/qianyin925/qy-norm/commit/c242844e6c99553374f8762c4f1a00239c7350a2))
+
+
+### Bug Fixes
+
+* 🐛 同时执行多个初始脚本, 有的命令会失败 ([083b807](https://github.com/qianyin925/qy-norm/commit/083b8079acde4b5510037451a345a9c4e1fd7666))
+* 🐛 qy-norm 执行总是失败 ([55ece20](https://github.com/qianyin925/qy-norm/commit/55ece2062919e3011ccd4aff332a18c02babb719))
+
 ## [1.4.0](https://github.com/qianyin925/qy-norm/compare/v1.3.0...v1.4.0) (2021-08-13)
 
 ## [1.3.0](https://github.com/qianyin925/qy-norm/compare/v1.2.0...v1.3.0) (2021-08-13)
