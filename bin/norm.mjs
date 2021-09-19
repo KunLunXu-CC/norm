@@ -9,13 +9,13 @@ const setting = [
   {
     name: 'cz',
     exec: async () => {
-      $`npm set-script cz "git add . && qy-cz"`;
+      await $`npm set-script cz "qy-cz"`.exitCode;
     },
   },
   {
     name: 'release',
     exec: async () => {
-      $`npm set-script release "qy-release"`;
+      await $`npm set-script release "qy-release"`.exitCode;
     },
   },
   {
@@ -24,12 +24,12 @@ const setting = [
       // 1、2 安装 husky
       // 3 添加 commit-msg 钩子, 校验 code: eslint stylelint
       // 4 添加 commit-msg 钩子, 校验 commit 信息
-      $`
+      await $`
         npm set-script prepare "husky install"
         npm run prepare
         npx husky add .husky/commit-msg "npx qy-codelint # 代码校验(eslint、stylelint)"
         npx husky add .husky/commit-msg "npx qy-commitlint # commit message 校验(调用commitlint)"
-      `;
+      `.exitCode;
     },
   },
 ];
