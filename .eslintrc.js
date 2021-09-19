@@ -62,7 +62,17 @@ module.exports = {
 
     // 3. 常规个性化定制
     'indent': [2, 2],                                            // 缩进: 2个空格
-    'max-len': [2, { code: 80, ignoreComments: true }],          // 单行不超过 80, 忽略注释
+    'max-len': [                        // 最大长度
+      2,
+      {
+        code: 80,                       // 单行不超过 80
+        ignoreComments: true,           // 忽略注释
+        ignoreUrls: true,               // 忽略 URL
+        ignoreStrings: true,            // 忽略字符串
+        ignoreTemplateLiterals: true,   // 忽略模板字符串
+        ignoreRegExpLiterals: true,     // 忽略正则
+      },
+    ],
     'keyword-spacing': [2],                                      // 强制关键字周围空格的一致性
     'rest-spread-spacing': [2, 'never'],                         // 扩展运算符及其表达式之间要求有空格
     'comma-spacing': [2, { before: false, after: true }],        // 强制在逗号周围使用空格

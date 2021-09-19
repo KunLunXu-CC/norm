@@ -27,7 +27,7 @@ const setting = [
       $`
         npm set-script prepare "husky install"
         npm run prepare
-        npx husky add .husky/commit-msg "npx qy-codelint"
+        npx husky add .husky/commit-msg "npx qy-codelint # 代码校验(eslint、stylelint)"
         npx husky add .husky/commit-msg "npx qy-commitlint"
       `;
     },
@@ -44,5 +44,7 @@ const { execs } = await inquirer.prompt([
   },
 ]);
 
-// 遍历执行
-execs.map((exec) => exec());
+// 遍历执行: 同步是因为多个命令可能要同时操作一个文件, 存在冲突
+for (const exec of execs) {
+  await exec();
+}
