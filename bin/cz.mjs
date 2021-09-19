@@ -1,15 +1,27 @@
 #!/usr/bin/env node
 import inquirer from 'inquirer';
 import config from '../utils/getCommitlintConfig.mjs';
+import { Command } from 'commander';
 import { $, chalk } from 'zx';
 
 // 1. 代码校验
 import './codelint.mjs';
 
 const TYPE_PLACEHOLDER_LENGTH = 10;
+
+
+const program = new Command();
+program.option('-a, --all', '添加当前目录下所有文件到暂存区(git add .)');
+program.parse(process.argv);
+
+const options = program.opts();
+
+// 2. 执行 igc -a 或 igc --all 则会自动执行 git add .
+options.all && (await $`git add .`);
+
 $.quote = (v) => v;
 
-// 2. 判断是否添加暂存文件
+// 3. 判断是否添加暂存文件
 if ((await $`git diff HEAD --staged --quiet --exit-code`.exitCode) === 0) {
   console.log(
     chalk.red('尚未暂存以备提交的变更, 请使用 git add 添加暂存文件!'),
@@ -17,12 +29,12 @@ if ((await $`git diff HEAD --staged --quiet --exit-code`.exitCode) === 0) {
   process.exit(1);
 }
 
-// 3. 交互式命令获取参数
+// 4. 交互式命令获取参数
 const { option, message } = await inquirer.prompt([
   {
     type: 'list',
     name: 'option',
-    message: "Select the type of change that you're committing",
+    message: "Select the type of change that you're committing\n",
     // filter: v => v.toLowerCase(),
     choices: config.types.map(({ emoji, value: type, desc }) => ({
       value: { emoji, type, desc },
@@ -35,7 +47,11 @@ const { option, message } = await inquirer.prompt([
   {
     type: 'input',
     name: 'message',
-    message: 'Write a short, imperative mood description of the change',
+    message: ({ option }) => (
+      `Write a short, imperative mood description of the change:\n ${
+        option.type
+      }: `
+    ),
     validate: (v) => !!v || 'Write a short',
   },
 ]);

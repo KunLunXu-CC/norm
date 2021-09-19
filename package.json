@@ -1,10 +1,10 @@
 {
   "name": "qy-norm",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "个人项目规范",
   "main": "index.js",
   "scripts": {
-    "cz": "git add . && node ./bin/cz.mjs",
+    "cz": "node ./bin/cz.mjs",
     "release": "node ./bin/release.mjs",
     "norm": "node ./bin/norm.mjs",
     "prepare": "husky install"
@@ -29,7 +29,7 @@
   "homepage": "https://github.com/qianyin925/qy-norm#readme",
   "dependencies": {
     "@commitlint/cli": "^12.1.4",
-    "@commitlint/config-angular": "^12.1.4",
+    "@commitlint/config-conventional": "^13.1.0",
     "babel-eslint": "^10.1.0",
     "commander": "^8.1.0",
     "eslint": "^7.32.0",

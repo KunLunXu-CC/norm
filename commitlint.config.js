@@ -1,52 +1,47 @@
 // commit 校验
 const types = [
   {
-    desc: 'A code change that neither fixes a bug or adds a feature',
-    emoji: '💡',
-    value: 'refactor',
-  },
-  {
-    desc: 'A new feature',
-    emoji: '🎸',
-    value: 'feat',
-  },
-  {
-    desc: 'A bug fix',
-    emoji: '🐛',
-    value: 'fix',
-  },
-  {
-    desc: 'A code change that improves performance',
-    emoji: '⚡️',
-    value: 'perf',
-  },
-  {
-    desc: 'Build process or auxiliary tool changes',
+    desc: '其他类型(无法定位 type)、或者上一个 commit 补充代码',
     emoji: '🤖',
     value: 'chore',
   },
   {
-    desc: 'CI related changes',
-    emoji: '🎡',
-    value: 'ci',
+    desc: '新增需求',
+    emoji: '🎸',
+    value: 'feat',
   },
   {
-    desc: 'Documentation only changes',
-    emoji: '📝',
-    value: 'docs',
+    desc: 'BUG 修复',
+    emoji: '🐛',
+    value: 'fix',
   },
   {
-    desc: 'Create a release commit',
-    emoji: '🏹',
-    value: 'release',
+    desc: '重大功能重构',
+    emoji: '💡',
+    value: 'refactor',
   },
   {
-    desc: 'Markup, white-space, formatting, missing semi-colons...',
+    desc: '代码格式变更(不是 CSS 样式)',
     emoji: '💄',
     value: 'style',
   },
   {
-    desc: 'Adding missing tests',
+    desc: '提高代码性能的变更',
+    emoji: '⚡️',
+    value: 'perf',
+  },
+  {
+    desc: '持续集成和部署相关的改动(脚本、打包配置文件……)',
+    emoji: '🎡',
+    value: 'ci',
+  },
+  {
+    desc: '项目文档变更',
+    emoji: '📝',
+    value: 'docs',
+  },
+  {
+    desc: '新增(更新)测试用例',
     emoji: '💍',
     value: 'test',
   },
@@ -54,7 +49,7 @@ const types = [
 
 module.exports = {
   types,
-  extends: ['@commitlint/config-angular'],
+  extends: ['@commitlint/config-conventional'],
   rules: {
     'type-enum': [2, 'always', types.map((v) => v.value)],
   },
