@@ -16,9 +16,10 @@ const { releaseParams, publish } = await inquirer.prompt([
     ],
   },
   {
+    default: false,
     type: 'confirm',
     name: 'publish',
-    message: '是否推送至远程?',
+    message: '是否发布 NPM 包?',
   },
 ]);
 
@@ -27,5 +28,5 @@ $`
   git fetch
   standard-version --release-as ${releaseParams}
   git push --follow-tags origin master
-  ${publish ? 'npm publish --access public' : ''}
+  ${publish ? 'npm publish --access public' : ''} # 发布 NPM 包
 `.exitCode;
