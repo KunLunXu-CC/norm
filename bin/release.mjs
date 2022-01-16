@@ -28,5 +28,5 @@ $`
   git fetch
   standard-version --release-as ${releaseParams}
   git push --follow-tags origin master
-  ${publish ? 'npm publish --access public' : ''} # 发布 NPM 包
+  ${publish ? 'npm publish --access public # 发布 NPM 包' : ''}
 `.exitCode;
