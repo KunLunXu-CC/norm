@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/qianyin925/qy-norm/compare/v1.4.9...v1.5.0) (2022-01-16)
+
+
+### Features
+
+* 【【all】commit 规范添加表情】 https://www.tapd.cn/58837035/prong/stories/view/1158837035001000682 ([36f166e](https://github.com/qianyin925/qy-norm/commit/36f166ecc24d32b3f08b77647e68601408ae328c))
+
 ### [1.4.9](https://github.com/qianyin925/qy-norm/compare/v1.4.8...v1.4.9) (2021-09-19)
 
 ### [1.4.8](https://github.com/qianyin925/qy-norm/compare/v1.4.7...v1.4.8) (2021-09-19)
