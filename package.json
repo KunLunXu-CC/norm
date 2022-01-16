@@ -1,6 +1,6 @@
 {
   "name": "qy-norm",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "个人项目规范",
   "main": "index.js",
   "scripts": {
