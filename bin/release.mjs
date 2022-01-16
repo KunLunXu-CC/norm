@@ -8,7 +8,7 @@ const { releaseParams, publish } = await inquirer.prompt([
   {
     type: 'list',
     name: 'releaseParams',
-    message: 'Select --release-as value',
+    message: '选择 --release-as 值',
     choices: [
       { value: 'major', name: '100 - major' },
       { value: 'minor', name: '010 - minor' },
@@ -18,7 +18,7 @@ const { releaseParams, publish } = await inquirer.prompt([
   {
     type: 'confirm',
     name: 'publish',
-    message: 'publish npm',
+    message: '是否推送至远程?',
   },
 ]);
 

@@ -13,4 +13,6 @@ module.exports = {
       ignorePseudoElements: ['global', 'local'], // 允许使用 :global :local
     }]
   },
+  // 忽略文件
+  ignoreFiles: ['**/*.js', '**/*.ts', '**/*.jsx', '**/*.tsx']
 }

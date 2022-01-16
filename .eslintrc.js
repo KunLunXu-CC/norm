@@ -113,7 +113,7 @@ module.exports = {
 
     'space-before-blocks': [2, 'always'],         // 要求语句块之前的空格
     'space-before-function-paren': [2, 'always'], // 要求函数圆括号之前有一个空格
-    'no-param-reassign': [2, { props: true }],    // 禁止对函数参数再赋值、禁止对参数对象修改属性
+    'no-param-reassign': [0],                     // 允许对函数参数再赋值、对参数对象修改属性(理论上应该是禁止的, 但是总有特殊情况, 后台比较多)
     'prefer-spread': 2,                           // 建议使用扩展语法而非.apply()
     'prefer-arrow-callback': 2,                   // 要求使用箭头函数作为回调
     'arrow-spacing': [2, { before: true, after: true }], // 要求箭头函数的箭头之前或之后有空格

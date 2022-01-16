@@ -4,22 +4,16 @@ import config from '../utils/getCommitlintConfig.mjs';
 import { Command } from 'commander';
 import { $, chalk } from 'zx';
 
-// 1. 代码校验
-import './codelint.mjs';
+$.quote = (v) => v;
 
-const TYPE_PLACEHOLDER_LENGTH = 10;
-
-
+// 1. 添加命令参数
 const program = new Command();
 program.option('-a, --all', '添加当前目录下所有文件到暂存区(git add .)');
 program.parse(process.argv);
 
+// 2. 命令参数处理
 const options = program.opts();
-
-// 2. 执行 igc -a 或 igc --all 则会自动执行 git add .
-options.all && (await $`git add .`);
-
-$.quote = (v) => v;
+options.all && (await $`git add .`); // 如果: 执行 igc -a 或 igc --all 则会自动执行 git add .
 
 // 3. 判断是否添加暂存文件
 if ((await $`git diff HEAD --staged --quiet --exit-code`.exitCode) === 0) {
@@ -34,27 +28,19 @@ const { option, message } = await inquirer.prompt([
   {
     type: 'list',
     name: 'option',
-    message: "Select the type of change that you're committing\n",
-    // filter: v => v.toLowerCase(),
+    message: '请选择 commit 类型\n',
     choices: config.types.map(({ emoji, value: type, desc }) => ({
       value: { emoji, type, desc },
-      name: `${emoji} ${type}${''.padStart(
-        TYPE_PLACEHOLDER_LENGTH - type.length,
-        ' ',
-      )}${desc}`,
+      name: `${emoji} ${type}${''.padStart(10 - type.length, ' ')}${desc}`,
     })),
   },
   {
     type: 'input',
     name: 'message',
-    message: ({ option }) => (
-      `Write a short, imperative mood description of the change:\n ${
-        option.type
-      }: `
-    ),
-    validate: (v) => !!v || 'Write a short',
+    validate: (v) => !!v || 'commit 信息必填喔',
+    message: ({ option }) => (`请填写 commit 信息:\n ${option.type}: `),
   },
 ]);
 
-// 4. git commit
+// 5. git commit
 $`git commit -m "${option.type}: ${option.emoji} ${message}"`.exitCode;
