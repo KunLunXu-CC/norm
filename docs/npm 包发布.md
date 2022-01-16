@@ -6,7 +6,7 @@
 
 ```shell
 # 1. 切换官方源头
-npm config set registry http://registry.npmjs.org
+npm config set registry https://registry.npmjs.org
 
 # 2. 登录 npm
 npm login
