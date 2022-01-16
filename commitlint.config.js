@@ -52,5 +52,7 @@ module.exports = {
   extends: ['@commitlint/config-conventional'],
   rules: {
     'type-enum': [2, 'always', types.map((v) => v.value)],
+    'header-max-length': [0, 'always', 72],
+    'body-max-length': [0, 'always', 72],
   },
 };
