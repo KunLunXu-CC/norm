@@ -38,12 +38,12 @@
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^7.0.1",
-    "inquirer": "^8.1.2",
+    "inquirer": "^8.2.0",
     "lint-staged": "^12.1.7",
     "standard-version": "^9.3.1",
     "stylelint": "^13.13.1",
     "stylelint-config-sass-guidelines": "^8.0.0",
     "stylelint-config-standard": "^22.0.0",
-    "zx": "^2.0.0"
+    "zx": "^4.2.0"
   }
 }
