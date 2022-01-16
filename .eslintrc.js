@@ -61,16 +61,16 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'off',
 
     // 3. 常规个性化定制
-    'indent': [2, 2],                                            // 缩进: 2个空格
-    'max-len': [                        // 最大长度
+    'indent': [2, 2, { SwitchCase: 1 }], // 缩进: 2个空格
+    'max-len': [                         // 最大长度
       2,
       {
-        code: 80,                       // 单行不超过 80
-        ignoreComments: true,           // 忽略注释
-        ignoreUrls: true,               // 忽略 URL
-        ignoreStrings: true,            // 忽略字符串
-        ignoreTemplateLiterals: true,   // 忽略模板字符串
-        ignoreRegExpLiterals: true,     // 忽略正则
+        code: 80,                        // 单行不超过 80
+        ignoreComments: true,            // 忽略注释
+        ignoreUrls: true,                // 忽略 URL
+        ignoreStrings: true,             // 忽略字符串
+        ignoreTemplateLiterals: true,    // 忽略模板字符串
+        ignoreRegExpLiterals: true,      // 忽略正则
       },
     ],
     'keyword-spacing': [2],                                      // 强制关键字周围空格的一致性
