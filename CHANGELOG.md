@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/qianyin925/qy-norm/compare/v2.0.0...v2.1.0) (2022-01-16)
+
+
+### Features
+
+* 🎸 【【qy-norm】Eslint index 针对 iswitch 进行调整】 https://www.tapd.cn/58837035/prong/stories/view/1158837035001000745 ([1234506](https://github.com/qianyin925/qy-norm/commit/1234506270408d5ec5408ef3ffd5b092b61f5a74))
+* 🎸 【【qy-norm】Eslint index 针对 iswitch 进行调整】 https://www.tapd.cn/58837035/prong/stories/view/1158837035001000745 ([7afd77e](https://github.com/qianyin925/qy-norm/commit/7afd77e8eeada06530197971d16f7fc273f8e3c5))
+
 ## [2.0.0](https://github.com/qianyin925/qy-norm/compare/v1.5.0...v2.0.0) (2022-01-16)
 
 ## [1.5.0](https://github.com/qianyin925/qy-norm/compare/v1.4.9...v1.5.0) (2022-01-16)
