@@ -1,6 +1,6 @@
 {
-  "name": "qy-norm",
-  "version": "2.4.0",
+  "name": "@kunlunxu/norm",
+  "version": "2.4.1",
   "description": "个人项目规范",
   "main": "index.js",
   "scripts": {
