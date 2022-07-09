@@ -9,13 +9,13 @@ const setting = [
   {
     name: 'cz',
     exec: async () => {
-      await $`npm set-script cz "qy-cz"`.exitCode;
+      await $`npm set-script cz "klx-cz"`.exitCode;
     },
   },
   {
     name: 'release',
     exec: async () => {
-      await $`npm set-script release "qy-release"`.exitCode;
+      await $`npm set-script release "klx-release"`.exitCode;
     },
   },
   {
@@ -27,8 +27,8 @@ const setting = [
       await $`
         npm set-script prepare "husky install"
         npm run prepare
-        npx husky add .husky/commit-msg "npx qy-codelint # 代码校验(eslint、stylelint)"
-        npx husky add .husky/commit-msg "npx qy-commitlint # commit message 校验(调用commitlint)"
+        npx husky add .husky/commit-msg "npx klx-codelint # 代码校验(eslint、stylelint)"
+        npx husky add .husky/commit-msg "npx klx-commitlint # commit message 校验(调用commitlint)"
       `.exitCode;
     },
   },

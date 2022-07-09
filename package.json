@@ -10,23 +10,23 @@
     "prepare": "husky install"
   },
   "bin": {
-    "qy-cz": "./bin/cz.mjs",
-    "qy-norm": "./bin/norm.mjs",
-    "qy-release": "./bin/release.mjs",
-    "qy-codelint": "./bin/codelint.mjs",
-    "qy-commitlint": "./bin/commitlint.mjs"
+    "klx-cz": "./bin/cz.mjs",
+    "klx-norm": "./bin/norm.mjs",
+    "klx-release": "./bin/release.mjs",
+    "klx-codelint": "./bin/codelint.mjs",
+    "klx-commitlint": "./bin/commitlint.mjs"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/qianyin925/qy-norm.git"
+    "url": "git+https://github.com/KunLunXu0-0/norm.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/qianyin925/qy-norm/issues"
+    "url": "https://github.com/KunLunXu0-0/norm/issues"
   },
-  "homepage": "https://github.com/qianyin925/qy-norm#readme",
+  "homepage": "https://github.com/KunLunXu0-0/norm#readme",
   "dependencies": {
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^13.1.0",
