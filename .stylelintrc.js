@@ -12,7 +12,10 @@ module.exports = {
     'selector-pseudo-element-no-unknown': [true, {
       ignorePseudoElements: ['global', 'local'], // 允许使用 :global :local
     }],
-    'selector-no-qualifying-type': false,
+    // 选择器不允许限定类型
+    'selector-no-qualifying-type': [true, {
+      ignore: ["attribute", "class", "id"]
+    }],
   },
   // 忽略文件
   ignoreFiles: ['**/*.js', '**/*.ts', '**/*.jsx', '**/*.tsx']
