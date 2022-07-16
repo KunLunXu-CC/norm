@@ -1,8 +1,8 @@
 module.exports = {
-  // root: true,                // 作用的目录是根目录
-  parser: 'babel-eslint',       //  Parsing error: Unexpected character '@'
+  // root: true,                  // 作用的目录是根目录
+  // parser: '@babel/eslint-parser', //  Parsing error: Unexpected character '@'
   parserOptions: {
-    ecmaVersion: 2018,
+    ecmaVersion: 'latest',
     sourceType: 'module',      // 按照模块的方式解析
   },
   env: {
