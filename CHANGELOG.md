@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.5.7](https://github.com/KunLunXu0-0/norm/compare/v2.5.6...v2.5.7) (2022-07-18)
+
+
+### Features
+
+* 🎸 update bin/norm ([c8e13db](https://github.com/KunLunXu0-0/norm/commit/c8e13db395eaa326255fdb91f1355034a665be02))
+
 ### [2.5.6](https://github.com/KunLunXu0-0/norm/compare/v2.5.5...v2.5.6) (2022-07-16)
 
 
