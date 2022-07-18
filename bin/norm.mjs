@@ -22,11 +22,13 @@ const setting = [
     name: 'commitlint',
     exec: async () => {
       // 1、2 安装 husky
-      // 3 添加 commit-msg 钩子, 校验 code: eslint stylelint
-      // 4 添加 commit-msg 钩子, 校验 commit 信息
+      // 3 删除 .husky/commit-msg 钩子配置
+      // 4 添加 commit-msg 钩子, 校验 code: eslint stylelint
+      // 5 添加 commit-msg 钩子, 校验 commit 信息
       await $`
         npm set-script prepare "husky install"
         npm run prepare
+        rm -rf .husky/commit-msg
         npx husky add .husky/commit-msg "npx klx-codelint # 代码校验(eslint、stylelint)"
         npx husky add .husky/commit-msg "npx klx-commitlint # commit message 校验(调用commitlint)"
       `.exitCode;
