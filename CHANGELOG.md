@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.6.0](https://github.com/KunLunXu0-0/norm/compare/v2.5.8...v2.6.0) (2022-07-30)
+
+
+### Features
+
+* 🎸 add ts ([82c45e3](https://github.com/KunLunXu0-0/norm/commit/82c45e3397b7f453ab1b8de1cb9166accf24f974))
+
 ### [2.5.8](https://github.com/KunLunXu0-0/norm/compare/v2.5.7...v2.5.8) (2022-07-18)
 
 ### [2.5.7](https://github.com/KunLunXu0-0/norm/compare/v2.5.6...v2.5.7) (2022-07-18)
