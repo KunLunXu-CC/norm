@@ -1,6 +1,5 @@
 module.exports = {
   // root: true,                  // 作用的目录是根目录
-  parser: '@typescript-eslint/parser', //  Parsing error: Unexpected character '@'
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',      // 按照模块的方式解析
@@ -15,11 +14,22 @@ module.exports = {
     _DEV_: true,
     lodash: true,
   },
-  plugins: ['react', 'import', 'jsdoc', 'react-hooks', '@typescript-eslint'],
-  extends: ['eslint:recommended', 'plugin:react/recommended', 'plugin:@typescript-eslint/recommended'],
+  plugins: ['react', 'import', 'jsdoc', 'react-hooks'],
+  extends: ['eslint:recommended', 'plugin:react/recommended'],
   settings: {
     react: { version: 'detect' },
   },
+
+  overrides: [
+    // 针对 ts 进行处理
+    {
+      files: ['*.ts', '*.tsx'],
+      plugins: ['@typescript-eslint'],
+      parser: '@typescript-eslint/parser',
+      extends: ['plugin:@typescript-eslint/recommended'],
+    },
+  ],
+
   rules: {
     // 1. react 插件规则个性化设置: https://www.npmjs.com/package/eslint-plugin-react
     'react/default-props-match-prop-types': 2, // 对于必须 props 无需设置默认值
