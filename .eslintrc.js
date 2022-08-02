@@ -14,8 +14,21 @@ module.exports = {
     _DEV_: true,
     lodash: true,
   },
-  plugins: ['react', 'import', 'jsdoc', 'react-hooks'],
-  extends: ['eslint:recommended', 'plugin:react/recommended'],
+
+  // 插件只是为 eslint 提供相关的规则配置, 要想使用还需要手动在 rules 中进行配置, 或者在 extends 中继承插件中的默认配置
+  plugins: [
+    'jsdoc',
+    'react',
+    'import',
+    'react-hooks',
+  ],
+  extends: [
+    'eslint:recommended',
+    'plugin:react/jsx-runtime',
+    'plugin:jsdoc/recommended',
+    'plugin:import/recommended',
+    'plugin:react-hooks/recommended',
+  ],
   settings: {
     react: { version: 'detect' },
   },
@@ -26,7 +39,10 @@ module.exports = {
       files: ['*.ts', '*.tsx'],
       plugins: ['@typescript-eslint'],
       parser: '@typescript-eslint/parser',
-      extends: ['plugin:@typescript-eslint/recommended'],
+      extends: [
+        'plugin:import/typescript',
+        'plugin:@typescript-eslint/recommended',
+      ],
     },
   ],
 
@@ -66,11 +82,8 @@ module.exports = {
       },
     ],
 
-    // 2. react-hooks 插件规则个性化设置
-    'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'off',
 
-    // 3. 常规个性化定制
+    // 2. 常规个性化定制
     'indent': [2, 2, { SwitchCase: 1 }], // 缩进: 2个空格
     'max-len': [                         // 最大长度
       2,
