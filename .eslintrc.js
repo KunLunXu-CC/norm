@@ -3,6 +3,9 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',      // 按照模块的方式解析
+    ecmaFeatures: {            // 想使用的额外的语言特性
+      jsx: true,
+    },
   },
   env: {
     es6: true,                // es6 环境
@@ -30,7 +33,13 @@ module.exports = {
     'plugin:react-hooks/recommended',
   ],
   settings: {
-    react: { version: 'detect' },
+    'react': { version: 'detect' },
+    // 导入 import 配置
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    },
   },
 
   overrides: [
