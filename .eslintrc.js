@@ -37,7 +37,7 @@ module.exports = {
     // 导入 import 配置
     'import/resolver': {
       node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.cjs', '.mjs'],
       },
     },
   },
@@ -158,8 +158,6 @@ module.exports = {
     'no-useless-constructor': 2,        // 禁用不必要的构造函数
     'no-dupe-class-members': 2,         // 不允许类成员中有重复的名称
     'no-duplicate-imports': 2,          // 禁止重复导入
-    'import/prefer-default-export': 2,  // 在只有一个导出的模块里, 用 export default
-    'import/first': 2,                  // 10.7 import 放在其他所有语句之前
 
     'spaced-comment': [2, 'always'],    // 注释前加一个空格
     'no-whitespace-before-property': 2, // 禁止属性前有空白
@@ -195,5 +193,9 @@ module.exports = {
       { blankLine: 'always', prev: 'export', next: '*' },     // export 语句之前需要空行
       { blankLine: 'always', prev: '*', next: 'export' },     // export 语句之后需要空行
     ],
+
+    // 3. import
+    'import/prefer-default-export': 2,  // 在只有一个导出的模块里, 用 export default
+    'import/first': 2,                  // 10.7 import 放在其他所有语句之前
   },
 };
