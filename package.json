@@ -1,6 +1,6 @@
 {
   "name": "@kunlunxu/norm",
-  "version": "2.7.1",
+  "version": "2.7.2",
   "description": "个人项目规范",
   "main": "index.js",
   "scripts": {
