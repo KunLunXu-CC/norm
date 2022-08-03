@@ -1,5 +1,6 @@
 module.exports = {
   // root: true,                  // 作用的目录是根目录
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',      // 按照模块的方式解析
@@ -8,13 +9,11 @@ module.exports = {
       experimentalObjectRestSpread: true,
     },
   },
-
   env: {
     es6: true,                // es6 环境
     node: true,               // node 环境
     browser: true,            // 开发环境配置表示可以使用浏览器的方法
   },
-
   globals: {                 // 自定义全局变量
     _: true,
     _DEV_: true,
@@ -27,16 +26,16 @@ module.exports = {
     'react',
     'import',
     'react-hooks',
+    '@typescript-eslint',
   ],
-
   extends: [
     'eslint:recommended',
     'plugin:react/jsx-runtime',
     'plugin:jsdoc/recommended',
-    'plugin:import/recommended',
+    'plugin:import/typescript',
     'plugin:react-hooks/recommended',
+    'plugin:@typescript-eslint/recommended',
   ],
-
   settings: {
     react: { version: 'detect' },
   },
