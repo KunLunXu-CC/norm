@@ -1,6 +1,6 @@
 // see: https://github.com/stylelint/stylelint/blob/master/docs/user-guide/rules/list.md
 module.exports = {
-  extends: ['stylelint-config-standard', 'stylelint-config-sass-guidelines'],
+  extends: ['stylelint-config-standard', 'stylelint-config-sass-guidelines', 'stylelint-config-standard-scss'],
   rules: {
     'max-nesting-depth': 3,  // 最大深度
     'selector-max-compound-selectors': 4, // 选择器最大个数 div .bar[data-val] > a.baz + .boom > #lorem {}
